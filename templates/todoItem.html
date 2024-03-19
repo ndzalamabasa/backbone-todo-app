@@ -1,0 +1,13 @@
+<div class="todo-details <%= isDone ? 'done' : '' %>">
+  <p class="item">
+    <input type="checkbox" title="isDone" class="is-done" <%= isDone ? 'checked'
+    : '' %>>
+    <strong><%- task %></strong>
+  </p>
+  <small><%- description %></small>
+</div>
+<div class="todo-actions">
+  <button type="button" title="delete" class="btn btn-danger delete-todo">
+    Delete
+  </button>
+</div>

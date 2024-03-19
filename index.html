@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backbone.js Example</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      #formmodel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      form,
+      #todo-list {
+        width: 90vw;
+        max-width: 450px;
+      }
+
+      form {
+        background-color: #b5b5b5;
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .form__controls {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .form__control {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+
+        margin-top: 2rem;
+      }
+
+      #todo-list .complete {
+        text-decoration: line-through;
+      }
+
+      .todo-item {
+        padding: 0.5rem;
+        margin: 1rem 0;
+        background-color: #b5b5b5;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        text-transform: uppercase;
+      }
+
+      .btn-danger {
+        background-color: rgb(237, 4, 4);
+        color: #f4f4f4;
+      }
+      #todo-list .complete {
+        text-decoration: line-through;
+      }
+
+      .todo-item {
+        padding: 0.5rem;
+        margin: 1rem 0;
+        background-color: #b5b5b5;
+        border-radius: 0.25rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        text-transform: uppercase;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .form-heading {
+        text-align: center;
+      }
+
+      .todos-heading {
+        padding-top: 2.25rem;
+      }
+
+      input {
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid #090909;
+      }
+
+      #btnCancel {
+        background-color: transparent;
+        border: 1px solid #090909;
+        color: #090909;
+      }
+
+      #btnSaveOne {
+        background-color: #090909;
+        color: #f4f4f4;
+      }
+
+      .done {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your HTML content goes here -->
+    <div id="formmodel">
+      <h2 class="todos-heading">All Todos</h2>
+      <ul id="todo-list"></ul>
+    </div>
+
+    <!-- Include RequireJS -->
+    <script src="libs/require.js" type="text/javascript"></script>
+
+    <!-- Configure RequireJS and load initial modules -->
+    <script>
+      require.config({
+        paths: {
+          jquery: "libs/jquery-3.7.1.min",
+          underscore: "libs/underscore-umd-min",
+          backbone: "libs/backbone-min",
+          text: "libs/text", // Include the text plugin
+          AppView: "./views/AppView",
+        },
+      });
+
+      // Load the initial module(s)
+      require(["AppView"], function (AppView) {
+        var view = new AppView();
+      });
+    </script>
+  </body>
+</html>
