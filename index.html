@@ -88,12 +88,16 @@
         text-transform: uppercase;
       }
 
-      .btn-danger {
-        background-color: rgb(237, 4, 4);
-        color: #f4f4f4;
+      .danger {
+        color: rgb(237, 4, 4);
       }
+
       #todo-list .complete {
         text-decoration: line-through;
+      }
+      .todo-actions {
+        display: flex;
+        gap: 1rem;
       }
 
       .todo-item {
@@ -150,8 +154,13 @@
 
       .done {
         text-decoration: line-through;
+        color: #5c5c5c;
       }
     </style>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Your HTML content goes here -->
